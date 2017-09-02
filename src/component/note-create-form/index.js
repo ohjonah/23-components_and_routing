@@ -1,5 +1,4 @@
 import React from 'react';
-import uuid from 'uuid/v1';
 
 class NoteCreateForm extends React.Component {
   constructor(props) {
