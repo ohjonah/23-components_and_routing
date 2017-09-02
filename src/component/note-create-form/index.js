@@ -32,6 +32,7 @@ class NoteCreateForm extends React.Component {
         <input
           name='title'
           type='text'
+          placeholder='Title'
           value={this.state.title}
           onChange={this.handleChange}
           />
@@ -39,6 +40,7 @@ class NoteCreateForm extends React.Component {
         <input
           name='content'
           type='text'
+          placeholder='Content'
           value={this.state.content}
           onChange={this.handleChange}
           />
