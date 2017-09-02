@@ -12,7 +12,7 @@ class NoteContainer extends React.Component {
 
   noteCreate(note) {
     note.id = uuid();
-    this.props.app.setState(state => ({
+    this.props.appState.setState(state => ({
       notes: [...state.notes, note]
     }));
   }
