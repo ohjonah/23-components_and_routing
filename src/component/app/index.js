@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import {BrowserRouter, Route} from 'react-router-dom';
 
-import NoteContainer from '../note-container';
+import DashboardContainer from '../dashboard-container';
 import NoteCreateForm from '../note-create-form';
 
 class App extends React.Component {
@@ -13,10 +13,10 @@ class App extends React.Component {
       notes: []
     };
 
-    this.appState = this.appState.bind(this);
+    this.getAppState = this.getAppState.bind(this);
   }
 
-  appState() {
+  getAppState() {
     return {
       state: this.state,
       setState: this.setState.bind(this)
@@ -35,7 +35,7 @@ class App extends React.Component {
             <Route
               exact path='/'
               component={ () =>
-                <NoteContainer appState={this.appState()} />
+                <DashboardContainer getAppState={this.getAppState()} />
               }
             />
           </section>
