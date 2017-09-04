@@ -1,40 +1,35 @@
 import React from 'react';
 
-class NoteCreateForm extends React.Component {
+class NoteUpdateForm extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       title: '',
-      content: '',
-      editing: false,
-      completed: false
+      content: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
-    let {name, value} = e.target;
-
     this.setState({
-      [name]: value
+      [e.target.name]: e.target.value
     });
   }
 
+
   handleSubmit(e) {
     e.preventDefault();
-    this.props.handleSubmit(this.state);
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className='note-update-form'>
         <input
           name='title'
           type='text'
-          placeholder='Title'
+          placeholder='update title'
           value={this.state.title}
           onChange={this.handleChange}
           />
@@ -42,15 +37,16 @@ class NoteCreateForm extends React.Component {
         <input
           name='content'
           type='text'
-          placeholder='Content'
+          placeholder='update content'
           value={this.state.content}
           onChange={this.handleChange}
           />
 
-        <button type='submit'>{this.props.buttonText}</button>
+        <button onClick=
       </form>
     );
   }
 }
 
-export default NoteCreateForm;
+export default NoteUpdateForm;
+

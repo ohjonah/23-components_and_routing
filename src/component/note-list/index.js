@@ -1,4 +1,5 @@
 import React from 'react';
+import NoteCreateForm from '../note-create-form';
 
 class NoteList extends React.Component {
   constructor(props){
@@ -15,12 +16,20 @@ class NoteList extends React.Component {
           <ul>
           {this.props.notes.map((note, i) => {
             console.log('NOTE?', note);
-            
+
             return (
               <li key={i}>
                 <button onClick={() => this.props.deleteNote(note)}>X</button>
                 <h2>{note.title}</h2>
                 <p>{note.content}</p>
+
+              <NoteCreateForm
+                buttonText='Update Note'
+                handleSubmit={(noteItem) => {
+                  noteItem.id = note.id;
+                  this.props.updateNote(noteItem);
+                }}
+                />
               </li>
             );
           })}
