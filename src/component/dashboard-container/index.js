@@ -37,7 +37,6 @@ class DashboardContainer extends React.Component {
   }
 
   render() {
-    console.log('GETAPPSTATE?:', this.props.getAppState);
     return (
       <div className='dashboard-container'>
         <div>

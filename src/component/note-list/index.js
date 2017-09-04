@@ -15,8 +15,6 @@ class NoteList extends React.Component {
           </div> :
           <ul>
           {this.props.notes.map((note, i) => {
-            console.log('NOTE?', note);
-
             return (
               <li key={i}>
                 <button onClick={() => this.props.deleteNote(note)}>X</button>
